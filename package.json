@@ -1,0 +1,37 @@
+{
+  "name": "ref-num-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build-watch": "webpack --watch",
+    "live": "live-server --port=6121 --ignore=node_modules --no-browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryzing/ref-num-tester.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryzing/ref-num-tester/issues"
+  },
+  "homepage": "https://github.com/aryzing/ref-num-tester#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "live-server": "^1.1.0"
+  }
+}
