@@ -1,0 +1,149 @@
+:root {
+  /* Blues */
+  --travelport-redefining-blue: #0075B0;
+  --header-nave-blue: #00507F;
+  --darkest-blue: #0C3B55;
+  --dark-blue: #005D8C;
+  --medium-blue: #54A1DA;
+  --light-blue: #DFE9EF;
+
+  /* Grays */
+  --darkest-gray: #333333;
+  --dark-gray: #666666;
+  --medium-gray: #999999;
+  --light-gray: #CCCCCC;
+  --lightest-gray: #F2F2F2;
+
+  /* Anchor and Button Colors */
+  --anchor: #159CDF;
+  --anchor-hover-focus: #005D8C;
+  --button-primary: #78BE20;
+  --button-primary-hover-focus: #91DA35;
+  --button-secondary: #8EABBA;
+  --button-secondary-hover-focus: #A8C8D9;
+  --button-disabled: #D3D5D8;
+
+  /* Primary and Secondary Colors */
+  --black: #000000;
+  --white: #FFFFFF;
+  --green: #78BE20;
+  --orange: #F39A26;
+  --red: #C81423;
+  --yellow: #F3F026;
+  --purple: #5E2751;
+
+  /* Travelport Marketing Color Palette */
+  --travelport-blue: #0075B0;
+  --aqua: #00A3AD;
+  --green: #78BE20;
+  --dark-blue: #001A72;
+  --purple: #582C83;
+  --dark-purple: #5E2751;
+  --burgundy: #890C58;
+  --dark-green: #046A38;
+  --text-gray: #63666A;
+  --black: #2C2A29;
+
+  /* Smartpoint Grays */
+  --black: #000000;
+  --gray-01: #333333;
+  --gray-02: #4E4E4E;
+  --gray-03: #666666;
+  --gray-04: #848484;
+  --gray-05: #999999;
+  --gray-06: #AAAAAA;
+  --gray-07: #CBCBCB;
+  --gray-08: #E6E6E6;
+  --gray-09: #F2F2F2;
+
+  /* Smartpoint Blues */
+  --dark-blue: #000000;
+  --medium-blue: #0C3B55;
+  --light-blue: #55A2DA;
+  --gray-blue: #6DA0B9;
+  --pale-gray-blue: #CFDDE2;
+
+  /* Smartpoint Text and Emphasis Colors */
+  --standard-text: #333333;
+  --terminal-orange: #F39A26;
+  --screen-orange: #F15A24;
+  --terminal-green: #00DD00;
+  --screen-green: #02A502;
+  --terminal-blue: #43C0FF;
+  --screen-blue: #0599F3;
+
+  /* Smartpoint Notifications and Alerts */
+  --error: #C72B2B;
+  --error-background: #FFB0B0;
+  --warning: #C99652;
+  --warning-background: #FFEEA6;
+  --success: #33AD33;
+  --success-background: #DFF0D8;
+}
+
+@font-face {
+	font-family: "Stag Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/build/fonts/StagSans-Book-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans";
+	font-style: italic;
+	font-weight: 400;
+	src: url("/build/fonts/StagSans-BookItalic-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans";
+	font-style: normal;
+	font-weight: 300;
+	src: url("/build/fonts/StagSans-Light-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans";
+	font-style: italic;
+	font-weight: 300;
+	src: url("/build/fonts/StagSans-LightItalic-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans";
+	font-style: normal;
+	font-weight: 600;
+	src: url("/build/fonts/StagSans-Medium-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans";
+	font-style: italic;
+	font-weight: 600;
+	src: url("/build/fonts/StagSans-MediumItalic-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans Round";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/build/fonts/StagSansRound-Book-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans Round";
+	font-style: normal;
+	font-weight: 300;
+	src: url("/build/fonts/StagSansRound-Light-Web.woff") format("woff");
+}
+@font-face {
+	font-family: "Stag Sans Round";
+	font-style: normal;
+	font-weight: 600;
+	src: url("/build/fonts/StagSansRound-Medium-Web.woff") format("woff");
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, html * {
+	font-family: "Stag Sans", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
