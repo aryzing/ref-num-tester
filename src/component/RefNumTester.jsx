@@ -6,12 +6,61 @@ export default class ReferenceNumberTester extends Component {
   constructor() {
     super()
     this.state = {
-      response: 'mock server response'
-    }
+      error: null,
+      password: '',
+      refNumber: '',
+      username: '',
+      response: null,
+    };
+
+    this.onChangeRefNumber = this.onChangeRefNumber.bind(this)
+    this.onChangeUsername = this.onChangeUsername.bind(this)
+    this.onChangePassword = this.onChangePassword.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  onChangeRefNumber(e) {
+    this.setState({refNumber: e.target.value});
+  }
+
+  onChangeUsername(e) {
+    this.setState({username: e.target.value});
+
+  }
+
+  onChangePassword(e) {
+    this.setState({password: e.target.value});
+
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    // use superagent to handle request and response
+    const { password, refNumber, username } = this.state
+    request
+      .post(`/api/somewhere`)
+      .send({password, refNumber, username})
+      .end((err, res) => {
+        if (err) {
+          this.setState({
+            error: err,
+            response: res,
+          })
+          return
+        }
+        console.log(err)
+        console.log(res)
+        this.setState({
+          error: null,
+          response: 'test'
+        })
+      })
+    console.log(this.state.value)
+  }
+
   render() {
     return (
-      <div className='component'>
+      <div className={styles.component}>
         <div className={styles.headerLogo}>
           <img src={`/build/${travelportLogo}`}/>
         </div>
@@ -24,15 +73,28 @@ export default class ReferenceNumberTester extends Component {
             <div className={styles.fieldTitle}>
               Reference Number
             </div>
-            <input className={styles.field} />
+            <input
+              className={styles.field}
+              name='refNumber'
+              onChange={this.onChangeRefNumber}
+            />
             <div className={styles.fieldTitle}>
               Username
             </div>
-            <input className={styles.field} />
+            <input
+              className={styles.field}
+              name='username'
+              onChange={this.onChangeUsername}
+            />
             <div className={styles.fieldTitle}>
               Password
             </div>
-            <input className={styles.field} type='password' />
+            <input
+              className={styles.field}
+              name='password'
+              onChange={this.onChangePassword}
+              type='password'
+            />
             <div className={styles.enterpriseButton} onClick={this.handleSubmit}>
               Submit
             </div>
@@ -40,7 +102,7 @@ export default class ReferenceNumberTester extends Component {
           <div className={styles.response}>
             <h2 className={styles.subheading}>Server Response</h2>
             <div className={styles.serverContainer}>
-              <pre className={styles.serverText}>{this.state.response}</pre>
+              <pre className={styles.serverText}>{this.state.response || `The server response will appear here.`}</pre>
             </div>
           </div>
         </div>
