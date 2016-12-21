@@ -7,6 +7,7 @@ module.exports = {
   path: 'build',
     filename: 'bundle.js',
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -17,6 +18,7 @@ module.exports = {
       {
         test: /\.css/,
         loader: ExtractTextPlugin.extract('css?camelCase&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
+        include: __dirname + '/src',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -28,7 +30,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin("modules.css"),
     new CopyWebpackPlugin([
       { from: './src/reset.css'},
       { from: './src/main.css'},
