@@ -39,5 +39,7 @@
     "react-dom": "^15.4.1",
     "webpack": "^1.14.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "superagent": "^3.3.1"
+  }
 }

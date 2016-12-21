@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import request from 'superagent'
 import styles from './styles.css'
 import travelportLogo from './Travelport_Logo.png'
 
@@ -37,17 +38,38 @@ export default class ReferenceNumberTester extends Component {
     e.preventDefault()
     // use superagent to handle request and response
     const { password, refNumber, username } = this.state
+
+    var xmlString = `
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+  <soapenv:Header/>
+  <soapenv:Body>
+     <tem:GetTqOptionGroupFromRefNuber>
+        <!--Optional:-->
+        <tem:refNum>${this.state.refNumber}</tem:refNum>
+     </tem:GetTqOptionGroupFromRefNuber>
+  </soapenv:Body>
+</soapenv:Envelope>
+    `
+    var parser = new DOMParser()
+    var xmlDoc = parser.parseFromString(xmlString, "text/xml")
+
+    var serializer = new XMLSerializer();
+    var xmlString = serializer.serializeToString(xmlDoc);
+    console.log(xmlString)
     request
-      .post(`/api/somewhere`)
-      .send({password, refNumber, username})
-      .end((err, res) => {
-        if (err) {
-          this.setState({
-            error: err,
-            response: res,
-          })
-          return
-        }
+    .post('/api/somewhere')
+    .set('Header-Username', username)
+    .set('Header-Password', password)
+    .type('xml')
+    .send(xmlString)
+    .end((err, res) => {
+      if (err) {
+        this.setState({
+          error: err,
+          response: res,
+        })
+        return
+      }
         console.log(err)
         console.log(res)
         this.setState({
